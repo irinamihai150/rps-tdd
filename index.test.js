@@ -10,7 +10,6 @@
 //   return "left";
 // }
 
-
 // function rps(left) {
 // 	return left === "rock" ? "left" : "right";
 // }
@@ -18,32 +17,60 @@
 // function rps(left, right) {
 // 	return left === "rock" ? "left" : right === "paper" ? "left" : "right";
 // }
+
+// function rps(left, right) {
+// 	return left === "rock" || right === "paper" ? "left" : "right";
+// }
+
 function rps(left, right) {
-	return left === "rock" || right === "paper" ? "left" : "right";
+	return (left === "rock" && right === "scissors") ||
+		(left === "scissors" && right === "paper") ||
+		(left === "paper" && right === "rock")
+		? "left"
+		: "right";
 }
 describe("rock, paper, scissors", () => {
-  //first test
-	// it("should say left wins for rock vs. scissors", () => {
-	// 	const left = "rock";
-	// 	const right = "scissors";
+	//first test
+	it("should say left wins for rock vs. scissors", () => {
+		const left = "rock";
+		const right = "scissors";
 
-	// 	const outcome = rps(left, right);
+		const outcome = rps(left, right);
 
-	// 	expect(outcome).toBe("left");
-	// });
-//second test
-  // it("should say right wins for scissors vs. rock", () => {
-	// 	const left = "scissors";
-	// 	const right = "rock";
+		expect(outcome).toBe("left");
+	});
+	//second test
+	it("should say right wins for scissors vs. rock", () => {
+		const left = "scissors";
+		const right = "rock";
 
-	// 	const result = rps(left, right);
+		const result = rps(left, right);
 
-	// 	expect(result).toBe("right");
-	// });
-  //third test
-  it("should say left wins for scissors vs. paper", () => {
+		expect(result).toBe("right");
+	});
+	//third test
+	it("should say left wins for scissors vs. paper", () => {
 		const left = "scissors";
 		const right = "paper";
+
+		const result = rps(left, right);
+
+		expect(result).toBe("left");
+	});
+
+	// fourth test
+	it("should say right wins for paper vs. scissors", () => {
+		const left = "paper";
+		const right = "scissors";
+
+		const result = rps(left, right);
+
+		expect(result).toBe("right");
+	});
+  // fifth test
+  it("should say left wins for paper vs. rock", () => {
+		const left = "paper";
+		const right = "rock";
 
 		const result = rps(left, right);
 
