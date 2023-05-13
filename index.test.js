@@ -1,3 +1,5 @@
+//blog.jonrshar.pe/2020/Aug/31/js-tdd-ftw.html
+
 // it("should work", () => {
 // 	const left = 1;
 // 	const right = 2;
@@ -30,7 +32,7 @@
 // 		: "right";
 // }
 
-function rps(left, right) {
+https: function rps(left, right) {
 	if (left === right) {
 		return "draw";
 	}
@@ -78,8 +80,8 @@ describe("rock, paper, scissors", () => {
 
 		expect(result).toBe("right");
 	});
-  // fifth test
-  it("should say left wins for paper vs. rock", () => {
+	// fifth test
+	it("should say left wins for paper vs. rock", () => {
 		const left = "paper";
 		const right = "rock";
 
